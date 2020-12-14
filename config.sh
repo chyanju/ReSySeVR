@@ -102,6 +102,9 @@ rm -rf ./.joernIndex/
 java -jar /opt/joern-0.3.1/bin/joern.jar /opt/ReSySeVR/data/SARD/dir_001/
 
 # (on screen A: start neo4j service)
+# note: everytime after you finish processing a batch (dir_xxx), 
+#       you should run the following commands and restart the neo4j service;
+#       otherwise the indexing will be problematic
 cd $INSTALLDIR
 rm -rf ./neo4j-community-2.1.8
 tar -zxvf artifact.php\?name\=neo4j-community-2.1.8-unix.tar.gz
