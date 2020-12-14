@@ -25,6 +25,8 @@ class DirofCorpus(object):
     def __iter__(self):
         for d in self.dirname:
             for fn in os.listdir(d):
+                if fn==".keep":
+                    continue
                 print(fn)
                 for filename in os.listdir(os.path.join(d, fn)):
                     samples = pickle.load(open(os.path.join(d, fn, filename), 'rb'))[0]

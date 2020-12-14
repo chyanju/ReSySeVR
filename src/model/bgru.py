@@ -66,7 +66,9 @@ def main(traindataSet_path, testdataSet_path, realtestpath, weightpath, resultpa
     labels = []
     testcases = []
     for filename in os.listdir(traindataSet_path):
-        if(filename.endswith(".pkl") is True):
+        if(filename.endswith(".pkl") is False):
+            continue
+        if filename==".keep":
             continue
         print(filename)
         f = open(os.path.join(traindataSet_path, filename),"rb")
@@ -107,6 +109,8 @@ def main(traindataSet_path, testdataSet_path, realtestpath, weightpath, resultpa
     for filename in os.listdir(traindataSet_path):
         if(filename.endswith(".pkl") is False):
            continue
+        if filename==".keep":
+            continue
         print(filename)
         f = open(os.path.join(traindataSet_path, filename),"rb")
         datasetfile,labelsfile,funcsfiles,filenamesfile,testcasesfile = pickle.load(f)
@@ -204,6 +208,8 @@ def testrealdata(realtestpath, weightpath, batch_size, maxlen, vector_dim, layer
     
     print("Loading data...")
     for filename in os.listdir(realtestpath):
+        if filename==".keep":
+            continue
         print(filename)
         f = open(realtestpath+filename, "rb")
         realdata = pickle.load(f,encoding="latin1")
@@ -224,7 +230,7 @@ if __name__ == "__main__":
     traindataSetPath = "./dl_input_shuffle/train/"
     testdataSetPath = "./dl_input_shuffle/test/"
     realtestdataSetPath = "data/"
-    weightPath = './model/BRGU'
+    weightPath = './model/BGRU'
     resultPath = "./result/BGRU/BGRU"
     main(traindataSetPath, testdataSetPath, realtestdataSetPath, weightPath, resultPath, batchSize, maxLen, vectorDim, layers, dropout)
     #testrealdata(realtestdataSetPath, weightPath, batchSize, maxLen, vectorDim, layers, dropout)

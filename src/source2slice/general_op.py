@@ -599,6 +599,8 @@ def getFuncPDGByNameAndtestID(func_name, testID):
 def getFuncPDGByNameAndtestID_noctrl(func_name, testID):
     pdg = False
     for _dir in os.listdir("pdg_db/"):
+        if _dir == ".keep":
+            continue
         list_testid = os.listdir(os.path.join("pdg_db/", _dir))
 
         if testID not in list_testid:

@@ -67,6 +67,8 @@ def get_dldata(filepath, dlTrainCorpusPath, dlTestCorpusPath, split=0.8, seed=11
             train_set = [[], [], [], [], [], []]
             ids = []
             for folder_train in folders_train[int(i*len(folders_train)/N) : int((i+1)*len(folders_train)/N)]:
+                if folder_train==".keep":
+                    continue
                 for filename in os.listdir(filepath + folder_train + '/'):
                     if mode in filename:
                         if folder_train not in os.listdir(dlTrainCorpusPath):   
@@ -128,6 +130,8 @@ if __name__ == "__main__":
     W2VPATH = "./w2v_model/wordmodel3"
     print("turn the corpus into vectors...")
     for corpusfiles in os.listdir(CORPUSPATH):
+        if corpusfiles==".keep":
+            continue
         print(corpusfiles)
         if corpusfiles not in os.listdir(VECTORPATH): 
             folder_path = os.path.join(VECTORPATH, corpusfiles)

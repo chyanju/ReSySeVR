@@ -32,6 +32,8 @@ def get_sentences(_path,labelpath,corpuspath,maptype=True):
     for filename in os.listdir(_path):
         if(filename.endswith(".txt") is False):
             continue
+        if filename == "error.txt":
+            continue
         print(filename)
 
         filepath = os.path.join(_path, filename)
