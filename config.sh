@@ -143,7 +143,7 @@ cp $ReSySeVR/src/source2slice/slice_label/*.txt $ReSySeVR/src/data_preprocess/da
 rm $ReSySeVR/src/data_preprocess/data/data_source/SARD/error.txt
 cp $ReSySeVR/src/source2slice/label_source/*.pkl $ReSySeVR/src/data_preprocess/data/label_source/SARD/
 cd $ReSySeVR/src/data_preprocess/
-python ./process_dataflow_func.py
+python3 ./process_dataflow_func.py
 python3 ./create_w2vmodel.py
 python3 ./get_dl_input.py
 python3 ./dealrawdata.py
