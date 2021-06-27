@@ -50,8 +50,10 @@ cd $INSTALLDIR
 wget https://github.com/nigelsmall/py2neo/archive/py2neo-2.0.tar.gz
 tar zxvf py2neo-2.0.tar.gz
 cd /opt/py2neo-py2neo-2.0/
+pip uninstall py2neo # uninstall existing one if there's any
 sudo python setup.py install
 # adding this to make sure you install py2neo 2.0
+# note: this may fail, but it doesn't matter
 pip install py2neo==2.0
 
 # build python-joern
@@ -119,10 +121,10 @@ cd $INSTALLDIR/neo4j-community-2.1.8/bin
 
 # (on screen B: start processing)
 cd $ReSySeVR/src/source2slice/
-python ./get_cfg_relation.py
-python ./complete_PDG.py
-python ./access_db_operate.py
-python ./points_get.py
+python ./get_cfg_relation.py # this outputs to src/source2slice/cfg_db/
+python ./complete_PDG.py # this outputs to src/source2slice/pdg_db/
+python ./access_db_operate.py # this outputs to src/source2slice/dict_call2cfgNodeID_funcID/
+python ./points_get.py # this outputs to sensifunc_slice_points.pkl, pointuse_slice_points.pkl, arrayuse_slice_points.pkl, integeroverflow_slice_points_new.pkl
 python ./extract_df.py
 python ./make_label.py
 cp api_slices.txt arraysuse_slices.txt integeroverflow_slices.txt pointersuse_slices.txt ./slices/
@@ -155,5 +157,16 @@ cp -r $ReSySeVR/src/data_preprocess/dl_input_shuffle/ $ReSySeVR/src/model/
 cd $ReSySeVR/src/model/
 python3 ./bgru.py
 
+# ===================== #
+# ==== other notes ==== #
+# ===================== #
+
+# if you are having trouble configuring igraph for Python3 (note that here we only need it for Python2, 
+# but in case you are using JupyterLab to view the data in Python3), you need some additional commands
+# to make the environment ready
+sudo apt install build-essential libxml2 libxml2-dev zlib1g-dev
+pip3 install --upgrade pip
+pip3 install python-igraph
+pip3 install cairocffi
 
 
