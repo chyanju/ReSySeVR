@@ -1,6 +1,6 @@
 ## ReSySeVR
 
-This is a fixed version of SySeVR: [https://github.com/SySeVR/SySeVR](https://github.com/SySeVR/SySeVR).
+This is an **<u>*attempted*</u>** fixed version of SySeVR: [https://github.com/SySeVR/SySeVR](https://github.com/SySeVR/SySeVR). There are still some known issues.
 
 ### Notes
 
