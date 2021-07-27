@@ -20,6 +20,8 @@ The VF extension simplified the data labeling process a bit, and provide a basic
 
 The processed data (for SARD) can be downloaded here: [Google Drive](https://drive.google.com/drive/folders/11S-tQmdUcgoWAWt16olC5_pKOZDLL_J8?usp=sharing). Use the notebook in `src_vf` to continue with learning or manipulate the data processing.
 
+The latest processed data (that is provided to the network, with pre-processing like new tokenization etc., as of July 27, 2021) can be found here: [Google Drive](https://drive.google.com/file/d/1-VmTGjM8KACsrra3Mlzj3WOAB2ASSZyN).
+
 ### References
 
 - SySeVR_fix: [https://github.com/kingnop/SySeVR_fix](https://github.com/kingnop/SySeVR_fix)
