@@ -1,6 +1,6 @@
 ## ReSySeVR
 
-**<u>*Note: This repo is based on snapshots of SySeVR in 2020, and has not yet been sync'd up with its latest updates.*</u>**
+### **<u>*Note: This repo is based on snapshots of SySeVR in 2020, and has not yet been sync'd up with its latest updates. This repo is not actively maintained any more. Please refer to the original repo of the SySeVR team: [https://github.com/SySeVR/SySeVR](https://github.com/SySeVR/SySeVR).*</u>**
 
 This is an **<u>*attempted*</u>** fixed version of SySeVR: [https://github.com/SySeVR/SySeVR](https://github.com/SySeVR/SySeVR). There are still some known issues.
 
